@@ -3,7 +3,7 @@
 namespace UDBase.Controllers.SceneSystem {
 
 	/// <summary>
-	/// Scene info factory
+	/// 씬 정보 팩토리
 	/// </summary>
 	public static class SceneInfo {
 		public static ISceneInfo Get<T>(T type) {
@@ -20,8 +20,8 @@ namespace UDBase.Controllers.SceneSystem {
 	}
 
 	/// <summary>
-	/// Basic scene info - requires only name.
-	/// Example: MainMenu, Settings, etc.
+	/// 기본 씬 정보 - 오직 이름만 필요.
+	/// EX : MainMenu, Settings, etc.
 	/// </summary>
 	public struct SceneName : ISceneInfo {
 		public string Name { get; private set; }
@@ -36,8 +36,8 @@ namespace UDBase.Controllers.SceneSystem {
 	}
 
 	/// <summary>
-	/// Specific info - custom type and (optional) parameter.
-	/// Example: Level_1, Level_N, etc.
+	/// 특별 정보 - 커스텀 타입 그리고 (선택 사항) 매개변수.
+	/// EX : (CustomType_Param), Level_1, Level_N, etc.
 	/// </summary>
 	public struct SceneParam<T> : ISceneInfo {
 		public string Type  { get; private set; }
@@ -56,8 +56,8 @@ namespace UDBase.Controllers.SceneSystem {
 	}
 
 	/// <summary>
-	/// Multi scene parameter - custom type with >1 parameters.
-	/// Example: Level_Type1_1, Level_TypeN_N, etc.
+	/// 멀티 씬 매개변수 - 커스텀 타입과 >1 매개변수.
+	/// EX : (CustomType_Params_N1_Params_N2...), Level_Type1_1, Level_TypeN_N, etc.
 	/// </summary>
 	public struct MultiSceneParam<T> : ISceneInfo {
 		public string   Type   { get; private set; }

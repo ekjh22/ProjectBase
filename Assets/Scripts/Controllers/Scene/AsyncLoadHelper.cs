@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace UDBase.Controllers.SceneSystem {
-
 	/// <summary>
-	/// Helper class for async scene loading
+	/// 비동기 씬 로딩을 도와주는 헬퍼 클래스
 	/// </summary>
 	public class AsyncLoadHelper : MonoBehaviour {
 		public float Progress { get; private set; }

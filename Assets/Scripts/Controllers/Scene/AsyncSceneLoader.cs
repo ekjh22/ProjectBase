@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UDBase.Controllers.EventSystem;
@@ -7,25 +6,25 @@ using UDBase.Controllers.EventSystem;
 namespace UDBase.Controllers.SceneSystem {
 
 	/// <summary>
-	/// Asynchronous scene loader
+	/// 비동기 씬 로더
 	/// </summary>
 	public sealed class AsyncSceneLoader : IScene {
 
 		/// <summary>
-		/// Base settings for AsyncSceneLoader, when you need to custom loading scene
+		/// 사용자 정의 로드 씬(scene)이 필요한 경우 AsyncSceneLoader에 대한 기본 설정
 		/// </summary>
 		public class BaseSettings {
 			public virtual ISceneInfo LoadingSceneInfo { get; }
 		}
 
 		/// <summary>
-		/// Settings.
+		/// 셋팅
 		/// </summary>
 		[Serializable]
 		public class Settings : BaseSettings {
 
 			/// <summary>
-			/// Loading scene name
+			/// 로딩 씬 이름
 			/// </summary>
 			[Tooltip("Loading scene name")]
 			public string LoadingScene;
@@ -60,14 +59,14 @@ namespace UDBase.Controllers.SceneSystem {
 		public void LoadScene(ISceneInfo sceneInfo) {
 			var sceneName = sceneInfo.Name;
 			TryOpenLoadingScene();
-            _helper.LoadScene(sceneName, (name) => {
-                if (name == sceneName)
-                {
-                    CurrentScene = sceneInfo;
-                    _events.Fire(new Scene_Loaded(sceneInfo));
-                }
-            });
-        }
+			_helper.LoadScene(sceneName, (name) => {
+				if (name == sceneName)
+				{
+					CurrentScene = sceneInfo;
+					_events.Fire(new Scene_Loaded(sceneInfo));
+				}
+			});
+		}
 
 		public void LoadScene(string sceneName) {
 			LoadScene(new SceneName(sceneName));

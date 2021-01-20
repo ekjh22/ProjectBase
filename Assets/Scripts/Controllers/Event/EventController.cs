@@ -5,7 +5,7 @@ using UDBase.Controllers.LogSystem;
 namespace UDBase.Controllers.EventSystem {
 
 	/// <summary>
-	/// Default event controller
+	/// 기본 이벤트 콘트롤러
 	/// </summary>
 	public class EventController : IEvent, ILogContext {
 		readonly Dictionary<Type, EventHandlerBase> _handlers    = new Dictionary<Type, EventHandlerBase>();
@@ -68,7 +68,7 @@ namespace UDBase.Controllers.EventSystem {
 		}
 	
 		/// <summary>
-		/// Gets the handlers for further use in EventWindow
+		/// 이벤트창에서 사용할 핸들러들을 가져옴
 		/// </summary>
 		public Dictionary<Type, List<object>> GetHandlers() {
 			_tmpHandlers.Clear();

@@ -4,7 +4,7 @@ using UDBase.Controllers.EventSystem;
 namespace UDBase.Controllers.SceneSystem {
 
 	/// <summary>
-	/// Synchronous scene loader 
+	/// 동기 씬 로더
 	/// </summary>
 	public sealed class DirectSceneLoader : IScene {
 		public ISceneInfo CurrentScene { get; private set; }

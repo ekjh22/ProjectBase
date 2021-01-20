@@ -1,7 +1,7 @@
 ﻿namespace UDBase.Controllers.LogSystem {
 
 	/// <summary>
-	/// Logger without any output for cases when you don't need any logs
+	/// 로그가 필요 없는 경우 출력 없이 로거
 	/// </summary>
 	public sealed class EmptyLog : ILog {
 		public ULogger CreateLogger(ILogContext context) { return new ULogger(this, context); }

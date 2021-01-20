@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UDBase.Controllers.LogSystem {
 
 	/// <summary>
-	/// Logger using default UnityLogger.
+	/// Logger을 사용하는 기본 UnityLog
 	/// </summary>
 	public sealed class UnityLog : ILog {
 		

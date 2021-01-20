@@ -1,6 +1,7 @@
 ﻿using UDBase.Controllers.LogSystem;
 using UDBase.Controllers.EventSystem;
 using UDBase.Controllers.SceneSystem;
+using UDBase.Controllers.TimeSystem;
 using Zenject;
 
 namespace UDBase.Installers {
@@ -15,21 +16,24 @@ namespace UDBase.Installers {
 			Container.Bind<ILog>().To<UnityLog>().AsSingle();
 		}
 
-		public void AddEvents()
-		{
+		public void AddEvents() {
 			Container.Bind<IEvent>().To<EventController>().AsSingle();
 		}
 
-		public void AddDirectSceneLoader()
-		{
+		public void AddDirectSceneLoader() {
 			Container.Bind<IScene>().To<DirectSceneLoader>().AsSingle();
 		}
 
-		public void AddAsyncSceneLoader(AsyncSceneLoader.Settings settings)
-		{
+		public void AddAsyncSceneLoader(AsyncSceneLoader.Settings settings) {
 			Container.Bind<AsyncLoadHelper>().FromNewComponentOnNewGameObject().AsSingle();
 			Container.BindInstance(settings);
 			Container.Bind<IScene>().To<AsyncSceneLoader>().AsSingle();
 		}
+
+		public void AddLocalTime() {
+			Container.Bind<ITime>().To<LocalTime>().AsSingle();
+		}
+
+
 	}
 }

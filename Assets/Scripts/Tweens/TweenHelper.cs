@@ -2,12 +2,12 @@
 
 namespace UDBase.Tweens {
 	/// <summary>
-	/// Helper methods for DG.Tween/Sequence usage
+	/// 헬퍼 메소드 DG.Tween/Sequence 사용해서 구현
 	/// </summary>
 	public static class TweenHelper {
 
 		/// <summary>
-		/// Reset given sequence and replace it with new
+		/// 지정된 시퀀스를 재설정하고 새 시퀀스로 교체
 		/// </summary>
 		public static Sequence Replace(Sequence seq, bool complete = false) {
 			if( seq != null ) {
@@ -17,7 +17,7 @@ namespace UDBase.Tweens {
 		}
 
 		/// <summary>
-		/// Reset given sequence
+		/// 지정된 시퀀스 재설정
 		/// </summary>
 		public static Sequence Reset(Sequence seq, bool complete = false) {
 			if( seq != null ) {

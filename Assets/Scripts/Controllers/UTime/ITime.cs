@@ -1,6 +1,6 @@
 ﻿using System;    
 
-namespace UDBase.Controllers.Time
+namespace UDBase.Controllers.TimeSystem
 {
     /// <summary>
     /// 소스에서 시간을 검색하는 간단한 인터페이스

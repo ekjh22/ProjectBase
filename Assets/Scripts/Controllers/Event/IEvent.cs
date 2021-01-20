@@ -3,27 +3,25 @@
 namespace UDBase.Controllers.EventSystem {
 
 	/// <summary>
-	/// IEvent is a lightweight event system, based on System.Action.
-	/// It does not use UnityEvent or native C# event/delegate way.
-	/// You can use both class and struct as event object.
-	/// For prevent leak issues you need to unsubscribe from events when you doesn't need them, e.g. in OnDisable/OnDestroy.
-	/// Unsubscribing is required for custom classes, for MonoBehaviour classes it recommended,
-	/// because before each event firing watchers checked for destroyed scripts and remove it (but if event is rare it may not happen).
+	/// IEvent는 System.Action을 기반으로 만든 event system 간소화 버전임
+	/// 클래스랑 구조체를 전부 이벤트 객체로 사용할 수 있음
+	/// 누수가 안나게 하려면 필요없는 이벤트는 무조건 구독 해제를 해줘야함 (ex : Destroy);
+	/// 그리고 구독 해제를 안하고 그냥 Destory로 없에버린다면 나중에 핸들러가 체크할 때 문제가 발생할 수 있으니까 [주의]
 	/// </summary>
 	public interface IEvent {
 
 		/// <summary>
-		/// Fire the specified event
+		/// 구독한 이벤트들을 실행함
 		/// </summary>
 		void Fire<T>(T arg);
 
 		/// <summary>
-		/// Subscribe the specified handler for specic event type using callback
+		/// 핸들러를 통해 해당 T에 함수들을 구독시킴
 		/// </summary>
 		void Subscribe<T>(object handler, Action<T> callback);
 
 		/// <summary>
-		/// Unsubscribe the specified callback
+		/// 해당 T에 있는 함수를 구독해제 시킴
 		/// </summary>
 		void Unsubscribe<T>(Action<T> callback);
 	}

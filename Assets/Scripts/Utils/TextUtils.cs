@@ -4,19 +4,19 @@ using System.Text;
 namespace UDBase.Utils {
 
 	/// <summary>
-	/// Utils for text processing
+	/// 텍스트 처리를 위한 유틸리티
 	/// </summary>
 	public static class TextUtils {
 
 		/// <summary>
-		/// Returns given value or non-null empty string if value is null
+		/// 값이 null인 경우 지정된 값 또는 null이 아닌 빈 문자열을 반환하는 함수
 		/// </summary>
 		public static string EnsureString(string value) {
 			return value != null ? value : ""; 
 		}
 
 		/// <summary>
-		/// Remove all white-spaces and control chars from given string
+		/// 지정된 문자열에서 모든 공백 및 제어 문자 제거하는 함수
 		/// </summary>
 		public static string RemoveWhitespaces(string str) {
 			var sb = new StringBuilder(str.Length);
@@ -30,7 +30,7 @@ namespace UDBase.Utils {
 		}
 
 		/// <summary>
-		/// Check given strings is equals without all white-spaces and control chars inside
+		/// 지정된 문자열이 내부에 모든 공백과 제어 차트가 없는 경우 동일함 확인하는 함수
 		/// </summary>
 		public static bool EqualsIgnoreWhitespaces(
 			string leftStr, string rightStr,
@@ -44,14 +44,16 @@ namespace UDBase.Utils {
 		}
 
 		/// <summary>
-		/// Trim all single and double quotes from given string 
+		/// 트리밍 : 공백 제거
+		/// 지정된 문자열에서 모든 작은따옴표 및 큰따옴표 트리밍하는 함수
 		/// </summary>
 		public static string TrimQuotes(string text) {
 			return text?.Trim('\"', '\'');
 		}
 
 		/// <summary>
-		/// Trim all begin/end empty chars and possible byte order mark in file content start
+		/// 트리밍 : 공백 제거
+		/// 파일 내용 시작 시 모든 시작/끝 빈 문자 및 가능한 바이트 순서 표시 트리밍
 		/// https://en.wikipedia.org/wiki/Byte_order_mark
 		/// </summary>
 		public static string TrimFileContent(string text) {
@@ -60,8 +62,8 @@ namespace UDBase.Utils {
 	}
 
 	/// <summary>
-	/// Utility class to hold string function, that called only when ToString() is called.
-	/// Useful for allocation-safe log calls.
+	/// ToString()이 호출될 때만 호출되는 문자열 함수를 보유할 유틸리티 클래스 (상속해서 사용)
+	/// 할당 안전 로그 호출에 유용.
 	/// </summary>
 	public class StringFunctor {
 		Func<string> _func;

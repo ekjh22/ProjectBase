@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UDBase.Controllers.Time
+namespace UDBase.Controllers.TimeSystem
 {
     /// <summary>
     /// 지역 시간 찾기용

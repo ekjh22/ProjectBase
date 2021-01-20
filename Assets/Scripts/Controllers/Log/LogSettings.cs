@@ -5,39 +5,39 @@ using UnityEngine;
 namespace UDBase.Controllers.LogSystem {
 
 	/// <summary>
-	/// Node, which defined, need to show logs for specific context or not
+	/// 정의된 노드에서 특정 로그를 표시해야됨 context 또는 not
 	/// </summary>
 	[Serializable]
 	public class LogNode {
 		/// <summary>
-		/// Current log context
+		/// 현재 로그 컨텍스트
 		/// </summary>
-		[Tooltip("Current log context")]
+		[Tooltip("현재 로그 컨텍스트")]
 		//[ClassImplements(typeof(ILogContext))]
 		public ILogContext Context;
 
 		/// <summary>
-		/// Is logs enabled for current context?
+		/// 현재 컨텍스트에서 로그 사용이 가능한가 ?
 		/// </summary>
-		[Tooltip("Is logs enabled for current context?")]
+		[Tooltip("현재 컨텍스트에서 로그 사용이 가능한가 ?")]
 		public bool Enabled;
 	}
 
 	/// <summary>
-	/// Common log settings
+	/// 기본 로그 셋팅
 	/// </summary>
 	[Serializable]
 	public class CommonLogSettings {
 		/// <summary>
-		/// Is logging for all contexts enabled by default?
+		/// 기본적으로 모든 컨텍스트에 대한 로깅이 활성화되어 있나?
 		/// </summary>
-		[Tooltip("Is logging for all contexts enabled by default?")]
+		[Tooltip("기본적으로 모든 컨텍스트에 대한 로깅이 활성화되어 있나?")]
 		public bool EnabledByDefault = false;
 
 		/// <summary>
-		/// The contexts with specific enabled state
+		/// 특정 활성화 상태의 컨텍스트
 		/// </summary>
-		[Tooltip("The contexts with specific enabled state")]
+		[Tooltip("특정 활성화 상태의 컨텍스트")]
 		//[OneLine]
 		public List<LogNode> Nodes = new List<LogNode>();
 
