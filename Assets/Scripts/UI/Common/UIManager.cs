@@ -73,7 +73,6 @@ namespace UDBase.UI.Common {
 		/// </summary>
 		public void ShowAll() {
 			var elements = UIElement.Instances;
-			Debug.Log("SA : " + elements);
 			foreach (var element in elements) {
 				if (!element.HasParent) {
 					element.Show();
@@ -86,7 +85,6 @@ namespace UDBase.UI.Common {
 		/// </summary>
 		public void HideAll() {
 			var elements = UIElement.Instances;
-			Debug.Log("HA : " + elements);
 			foreach (var element in elements) {
 				if (!element.HasParent) {
 					element.Hide();
@@ -110,12 +108,16 @@ namespace UDBase.UI.Common {
 		/// 그룹에 맞는 객체들을 숨겨줌
 		/// </summary>
 		public void Hide(string group) {
-			var elements = UIElement.Instances;
-			foreach (var element in elements) {
+			var hideElements = new HashSet<UIElement>();
+
+			foreach (var element in UIElement.Instances) {
 				if (!element.HasParent && (element.Group == group)) {
-					element.Hide();
+					hideElements.Add(element);
 				}
 			}
+			foreach (var element in hideElements) {
+				element.Hide();
+            }
 		}
 	}
 }

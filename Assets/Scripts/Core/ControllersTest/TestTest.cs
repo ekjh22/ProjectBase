@@ -26,7 +26,7 @@ public class TestTest : MonoBehaviour
 
     Action<Test> ptsd;
 
-    void Start()
+    void Awake()
     {
         DontDestroyOnLoad(this);
 
@@ -43,6 +43,13 @@ public class TestTest : MonoBehaviour
         
         _event.Fire(player);
 
+
         //_scene.LoadScene("Game");
+    }
+    
+    [ContextMenu("Show")]
+    public void ShowS()
+    {
+        _ui.Show("Sex1");
     }
 }

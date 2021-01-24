@@ -34,6 +34,5 @@ namespace UDBase.Installers {
 			Container.Bind<ITime>().To<LocalTime>().AsSingle();
 		}
 
-
 	}
 }

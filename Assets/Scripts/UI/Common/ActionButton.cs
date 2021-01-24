@@ -38,12 +38,18 @@ namespace UDBase.UI.Common
 		/// <summary>
 		/// 현재 버튼이 표시되어있나?
 		/// </summary>
-		public abstract bool IsVisible();
+		public bool IsVisible()
+		{
+			return _button.IsActive();
+		}
 
 		/// <summary>
 		/// 현재 버튼이 상호작용이 가능한가?
 		/// </summary>
-		public abstract bool IsInteractable();
+		public bool IsInteractable()
+        {
+			return _button.interactable;
+        }
 
 		/// <summary>
 		/// 클릭 한 번으로 수행할 구체적인 이벤트

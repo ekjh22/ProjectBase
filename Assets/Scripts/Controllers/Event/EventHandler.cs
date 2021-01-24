@@ -13,9 +13,6 @@ namespace UDBase.Controllers.EventSystem {
 		}
 
 		public void Unsubscribe(Action<T> callback) {
-
-			Debug.Log("기모띠 : " + (_callbacks[0] == callback));
-
 			var index = _callbacks.IndexOf(callback);
 			if( index >= 0 ) {
 				Unsubscribe(index);

@@ -123,6 +123,17 @@ namespace UDBase.UI.Common {
                     Childs[i].SetParent(this);
                 }
             }
+
+            if (!HasParent) {
+                IsInteractable = InitialActive;
+                if (AutoShow) {
+                    Show();
+                } else {
+                    State = UIElementState.Hidden;
+                }
+            }
+            Instances.Add(this);
+            _events?.Subscribe<UI_ElementHidden>(this, OnElementHidden);
         }
 
         bool IsChild(UIElement element) {
@@ -158,19 +169,7 @@ namespace UDBase.UI.Common {
             _events?.Unsubscribe<UI_ElementHidden>(OnElementHidden);
         }
 
-        void Start() {
-            if (!HasParent) {
-                IsInteractable = InitialActive;
-                if (AutoShow) {
-                    Show();
-                }
-                else {
-                    State = UIElementState.Hidden;
-                }
-            }
-        }
-
-        bool CanShow() {
+        public bool CanShow() {
             return
                 (State != UIElementState.Showing) &&
                 (State != UIElementState.Shown);
@@ -222,7 +221,7 @@ namespace UDBase.UI.Common {
             }
         }
 
-        bool CanHide() {
+        public bool CanHide() {
             return
                 (State != UIElementState.Hiding) &&
                 (State != UIElementState.Hidden);

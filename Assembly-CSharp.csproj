@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Controllers\UTime\LocalTime.cs" />
     <Compile Include="Assets\Scripts\Core\ControllersTest\Test.cs" />
     <Compile Include="Assets\Scripts\Core\ControllersTest\TestTest.cs" />
+    <Compile Include="Assets\Scripts\Core\UITest\NewButton.cs" />
     <Compile Include="Assets\Scripts\Installers\MonoController.cs" />
     <Compile Include="Assets\Scripts\Installers\UDBaseInstallers.cs" />
     <Compile Include="Assets\Scripts\Installers\UDBaseSceneInstaller.cs" />
