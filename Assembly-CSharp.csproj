@@ -74,6 +74,9 @@
     <Compile Include="Assets\Scripts\Controllers\Log\LogSettings.cs" />
     <Compile Include="Assets\Scripts\Controllers\Log\ULogger.cs" />
     <Compile Include="Assets\Scripts\Controllers\Log\UnityLog.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Object\AIMachine.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Object\IObjectInfo.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Object\PlayerMachine.cs" />
     <Compile Include="Assets\Scripts\Controllers\Scene\AsyncLoadHelper.cs" />
     <Compile Include="Assets\Scripts\Controllers\Scene\AsyncSceneLoader.cs" />
     <Compile Include="Assets\Scripts\Controllers\Scene\DirectSceneLoader.cs" />
@@ -85,6 +88,10 @@
     <Compile Include="Assets\Scripts\Controllers\UTime\LocalTime.cs" />
     <Compile Include="Assets\Scripts\Core\ControllersTest\Test.cs" />
     <Compile Include="Assets\Scripts\Core\ControllersTest\TestTest.cs" />
+    <Compile Include="Assets\Scripts\Core\MainGame\GameEnums.cs" />
+    <Compile Include="Assets\Scripts\Core\MainGame\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Core\ObjectTest\AI.cs" />
+    <Compile Include="Assets\Scripts\Core\ObjectTest\Player.cs" />
     <Compile Include="Assets\Scripts\Core\UITest\NewButton.cs" />
     <Compile Include="Assets\Scripts\Installers\MonoController.cs" />
     <Compile Include="Assets\Scripts\Installers\UDBaseInstallers.cs" />
@@ -99,6 +106,7 @@
     <Compile Include="Assets\Scripts\UI\Log\VisualLogHandler.cs" />
     <Compile Include="Assets\Scripts\UI\Scene\LoadingView.cs" />
     <Compile Include="Assets\Scripts\UI\UI.cs" />
+    <Compile Include="Assets\Scripts\Utils\KeyUtils.cs" />
     <Compile Include="Assets\Scripts\Utils\RandomUtils.cs" />
     <Compile Include="Assets\Scripts\Utils\RangeUtils.cs" />
     <Compile Include="Assets\Scripts\Utils\TextUtils.cs" />
