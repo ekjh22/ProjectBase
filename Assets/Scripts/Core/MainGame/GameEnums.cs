@@ -6,7 +6,8 @@
     public enum ObjectKind : byte {
         
         Player,
-        NPC, Enemy, Boss,
+        NPC, Item,
+        Enemy, Boss,
         NONE = 99
     }
 
@@ -16,9 +17,9 @@
     public enum PlayerState : byte {
         
         Idle,
-        Walk, Run, Talk,
-        Attack,
-        Dead,
+        Walk, Run, Jump, Talk,
+        Attack, SpecialAttack,
+        Dead, Option,
         NONE = 99
     }
 
@@ -28,9 +29,28 @@
     public enum AIState : byte {
     
         Idle,
-        Walk,
+        Patrol, Track,
         Attack,
         Dead,
+        NONE = 99
+    }
+
+    /// <summary>
+    /// 아이템의 상태 종류
+    /// </summary>
+    public enum ItemState : byte {
+    
+        Idle,
+        Dead,
+        NONE = 99
+    }
+
+    /// <summary>
+    /// 아이템의 종류
+    /// </summary>
+    public enum ItemKind : byte {
+
+        Test,
         NONE = 99
     }
 }

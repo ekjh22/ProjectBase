@@ -24,11 +24,18 @@ public class AI : AIMachine
         base.IdleEvent();
     }
 
-    protected sealed override void WalkEvent()
+    protected sealed override void PatrolEvent()
     {
-        _log.Message("AI Walk");
+        _log.Message("AI Patrol");
 
-        base.WalkEvent();
+        base.PatrolEvent();
+    }
+
+    protected sealed override void TrackEvent()
+    {
+        _log.Message("AI Track");
+
+        base.TrackEvent();
     }
 
     protected sealed override void Callback()
